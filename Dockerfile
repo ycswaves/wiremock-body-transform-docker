@@ -13,5 +13,6 @@ WORKDIR /home/wiremock
 VOLUME /home/wiremock
 EXPOSE 8080 8081
 
-CMD java -jar /wiremock-body-transformer-1.1.1.jar:/wiremock-standalone-$WIREMOCK_VERSION.jar $WIREMOCK_ARGS --extensions com.opentable.extension.BodyTransformer
+CMD java -cp "wiremock-body-transformer-1.1.1.jar" com.opentable.extension.BodyTransformer
+CMD java -jar /wiremock-standalone-$WIREMOCK_VERSION.jar $WIREMOCK_ARGS --extensions com.opentable.extension.BodyTransformer
 
